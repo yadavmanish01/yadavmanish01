@@ -1,90 +1,54 @@
-👋 Hi there, I'm Manish Yadav
-🚀 Flutter Developer | Mobile App Enthusiast
 <div align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=00C1FF&height=200&section=header&text=Flutter%20Developer&fontSize=70&animation=fadeIn&fontAlignY=35" width="100%" />
+
+# Manish Yadav
+### Flutter developer · making apps feel like magic.
+
+I turn useful ideas into friendly mobile apps: smooth on the surface, thoughtfully connected underneath.
+
+<br />
+
+[![GitHub](https://img.shields.io/badge/EXPLORE_MY_CODE-GitHub-171b20?style=for-the-badge&logo=github&logoColor=c8fa78)](https://github.com/yadavmanish01)
+[![Email](https://img.shields.io/badge/LET’S_TALK-Email-171b20?style=for-the-badge&logo=gmail&logoColor=c8fa78)](mailto:imyadavmanish01@gmail.com)
+
 </div>
 
-🧑‍💻 About Me
-💻 I build scalable and clean Flutter applications
+---
 
-⚡ Experienced with state management & architecture
+## What I bring to an app
 
-🔧 I love solving real-world problems using code
+Think of an app as a little world. I build its screens, connect it to useful services, and add the details that make it feel easy to use.
 
-📱 Focused on performance & UI/UX
+| The app needs to… | I work with… |
+| --- | --- |
+| Welcome people back to their account | Firebase Authentication |
+| Send a timely update | Firebase Cloud Messaging (FCM) |
+| Understand which features are useful | Firebase Analytics |
+| Spot and fix crashes | Firebase Crashlytics |
+| Check app requests and protect services | Firebase App Check |
+| Adjust selected experiences remotely | Firebase Remote Config |
+| Fetch live information from other services | REST APIs, HTTP, Dio |
+| Build and organize Flutter projects | Flutter, Dart, Get CLI |
 
-🛠️ Tech Stack
-🚀 Flutter & Mobile
-<p align="left">
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg" alt="flutter" width="45" height="45"/>
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-original.svg" alt="dart" width="45" height="45"/>
-<img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="45" height="45"/>
-<img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="45" height="45"/>
-</p>
+## How I like to build
 
-Flutter
+**Start with people.** Make the purpose clear and the flow easy to follow.  
+**Connect the pieces.** Bring together the interface, APIs, and Firebase services.  
+**Polish the feeling.** Use animation and thoughtful details to make interactions feel natural.
 
-Dart
+## My toolkit
 
-GetX
+`Flutter` · `Dart` · `Firebase` · `FCM` · `Crashlytics` · `Analytics` · `Authentication` · `App Check` · `Remote Config` · `HTTP` · `Dio` · `Get CLI` · `GetX` · `BLoC` · `Git`
 
-Bloc
+## Projects
 
-🌐 Backend & APIs
-REST APIs
+I’m preparing project write-ups with demos and code links. This space will grow as I add projects worth exploring.
 
-HTTP
+## Let’s make something useful
 
-Dio
+Open to collaborating on Flutter apps and real-world product ideas.
 
-Firebase
+<div align="center">
 
-🧰 Tools & Workflow
-Git & GitHub
+[GitHub](https://github.com/yadavmanish01) &nbsp; · &nbsp; [Email Manish](mailto:imyadavmanish01@gmail.com)
 
-GetCLI
-
-Android Studio
-
-VS Code
-
-📊 What I Do
-📱 Build cross-platform mobile apps
-
-🔗 API integration (HTTP & Dio)
-
-🔥 Firebase integration (Auth, Firestore, etc.)
-
-🧠 State management (GetX, Bloc)
-
-🏗️ Clean architecture & scalable code
-
-🌱 Currently Learning
-Advanced Flutter animations
-
-Performance optimization
-
-Scalable app architecture
-
-🤝 Let's Collaborate
-Open to Flutter projects
-
-Interested in real-world app development
-
-Always ready to learn & contribute
-
-📫 Connect With Me
-<p align="left">
-<a href="https://github.com/yadavmanish01"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /></a>
-<a href="mailto:imyadavmanish01@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-</p>
-
-GitHub: https://github.com/yadavmanish01
-
-Email: imyadavmanish01@gmail.com
-
-
-⚡ Fun Fact
-I can turn ☕ into Flutter apps 😄
-
-⭐️ From Manish Yadav
+</div>
