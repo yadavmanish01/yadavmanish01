@@ -41,7 +41,7 @@ Think of an app as a little world. I build its screens, connect it to useful ser
 
 ## Projects
 
-The portfolio site includes a public project gallery and an admin-only upload form. Project name is required; logo, description, services, and link are optional.
+The portfolio site includes a public project gallery and an admin-only upload form. Project name is required; description, services, and link are optional. Logo uploads are disabled until Firebase Storage is enabled.
 
 ### Connect the project gallery to Firebase
 

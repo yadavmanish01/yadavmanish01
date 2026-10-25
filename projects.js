@@ -16,13 +16,6 @@ import {
   query,
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
-import {
-  deleteObject,
-  getDownloadURL,
-  getStorage,
-  ref,
-  uploadBytes
-} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-storage.js";
 import { adminEmail, firebaseConfig } from "./firebase-config.js";
 
 const projectSection = document.querySelector("#projects .wrap");
@@ -54,7 +47,7 @@ projectAdmin.innerHTML = `
   </div>
   <form class="project-form" id="project-upload-form" hidden>
     <div class="project-field"><label for="project-name">APP NAME *</label><input id="project-name" name="name" maxlength="100" required /></div>
-    <div class="project-field"><label for="project-logo">APP LOGO (OPTIONAL)</label><input id="project-logo" name="logo" type="file" accept="image/*" /></div>
+    <div class="project-field"><label>APP LOGO</label><p class="project-status">Logo upload will be available after Firebase Storage is enabled.</p></div>
     <div class="project-field full"><label for="project-description">DESCRIPTION (OPTIONAL)</label><textarea id="project-description" name="description" maxlength="1500"></textarea></div>
     <div class="project-field"><label for="project-services">SERVICES USED (OPTIONAL)</label><input id="project-services" name="services" placeholder="Flutter, Firebase, REST API" maxlength="300" /></div>
     <div class="project-field"><label for="project-link">PROJECT LINK (OPTIONAL)</label><input id="project-link" name="link" type="url" placeholder="https://…" /></div>
@@ -179,14 +172,11 @@ async function removeProject(project) {
   try {
     await deleteDoc(doc(database, "projects", project.id));
     removed = true;
-    if (project.logoPath) {
-      await deleteObject(ref(storage, project.logoPath));
-    }
     status.textContent = `${project.name} was removed.`;
   } catch (error) {
     reportError(
       removed
-        ? "The project was removed, but its logo could not be deleted."
+        ? "The project was removed."
         : "Could not remove the project.",
       error
     );
@@ -204,7 +194,6 @@ if (
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
   const database = getFirestore(app);
-  const storage = getStorage(app);
   let projects = [];
   let isAdmin = false;
   let isSignedIn = false;
@@ -311,16 +300,6 @@ if (
       .map(service => service.trim())
       .filter(Boolean);
     const linkValue = String(formData.get("link") || "").trim();
-    const logo = formData.get("logo");
-    if (logo instanceof File && logo.size > 5 * 1024 * 1024) {
-      status.textContent = "Logo images must be 5 MB or smaller.";
-      return;
-    }
-    if (logo instanceof File && logo.size && !logo.type.startsWith("image/")) {
-      status.textContent = "The logo must be an image file.";
-      return;
-    }
-
     let link;
     try {
       link = validProjectUrl(linkValue);
@@ -331,22 +310,11 @@ if (
 
     status.textContent = "Publishing project…";
     try {
-      let logoUrl = "";
-      let logoPath = "";
-      if (logo instanceof File && logo.size) {
-        const safeName = logo.name.replace(/[^a-zA-Z0-9._-]/g, "-");
-        logoPath = `projects/${auth.currentUser.uid}/${Date.now()}-${safeName}`;
-        const logoRef = ref(storage, logoPath);
-        await uploadBytes(logoRef, logo, { contentType: logo.type });
-        logoUrl = await getDownloadURL(logoRef);
-      }
       await addDoc(collection(database, "projects"), {
         name,
         description,
         services,
         link,
-        logoUrl,
-        logoPath,
         createdAt: serverTimestamp()
       });
       uploadForm.reset();
