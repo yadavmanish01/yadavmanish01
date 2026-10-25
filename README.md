@@ -41,7 +41,50 @@ Think of an app as a little world. I build its screens, connect it to useful ser
 
 ## Projects
 
-I’m preparing project write-ups with demos and code links. This space will grow as I add projects worth exploring.
+The portfolio site includes a public project gallery and an admin-only upload form. Project name is required; logo, description, services, and link are optional.
+
+### Connect the project gallery to Firebase
+
+1. In the [Firebase console](https://console.firebase.google.com/), create or open a Firebase project.
+2. Open **Project settings → General → Your apps**, add a **Web app**, and copy its Firebase configuration.
+3. Replace the example values in `firebase-config.js` with the web app configuration. Set `adminEmail` to the exact email address you will use to sign in. Firebase web app configuration is public; never put an account password or service-account key in this file.
+4. In **Authentication → Sign-in method**, enable **Email/Password**. In **Users**, add your admin account and set its password.
+5. Create a **Cloud Firestore** database and enable **Storage** for the project.
+6. Publish these Firestore rules, replacing `YOUR_ADMIN_EMAIL` with the same admin email:
+
+   ```text
+   rules_version = '2';
+   service cloud.firestore {
+     match /databases/{database}/documents {
+       match /projects/{projectId} {
+         allow read: if true;
+         allow create, update, delete: if request.auth != null
+           && request.auth.token.email == 'YOUR_ADMIN_EMAIL';
+       }
+     }
+   }
+   ```
+
+7. Publish these Storage rules with the same email. They make uploaded project logos publicly viewable but restrict uploads and deletes to the admin:
+
+   ```text
+   rules_version = '2';
+   service firebase.storage {
+     match /b/{bucket}/o {
+       match /projects/{adminUid}/{fileName} {
+         allow read: if true;
+         allow write: if request.auth != null
+           && request.auth.token.email == 'YOUR_ADMIN_EMAIL'
+           && request.auth.uid == adminUid
+           && (request.resource == null
+             || (request.resource.size < 5 * 1024 * 1024
+               && request.resource.contentType.matches('image/.*')));
+       }
+     }
+   }
+   ```
+
+8. Deploy the site with `index.html`, `projects.js`, and `firebase-config.js` in the same directory. Open the **Projects** section, sign in with your Firebase admin email and password, and publish projects. Visitors can see published projects without signing in.
 
 ## Let’s make something useful
 
