@@ -1,97 +1,90 @@
+👋 Hi there, I'm Manish Yadav
+🚀 Flutter Developer | Mobile App Enthusiast
 <div align="center">
-
-# Manish Yadav
-### Flutter developer · making apps feel like magic.
-
-I turn useful ideas into friendly mobile apps: smooth on the surface, thoughtfully connected underneath.
-
-<br />
-
-[![GitHub](https://img.shields.io/badge/EXPLORE_MY_CODE-GitHub-171b20?style=for-the-badge&logo=github&logoColor=c8fa78)](https://github.com/yadavmanish01)
-[![Email](https://img.shields.io/badge/LET’S_TALK-Email-171b20?style=for-the-badge&logo=gmail&logoColor=c8fa78)](mailto:imyadavmanish01@gmail.com)
-
+<img src="https://capsule-render.vercel.app/api?type=waving&color=00C1FF&height=200&section=header&text=Flutter%20Developer&fontSize=70&animation=fadeIn&fontAlignY=35" width="100%" />
 </div>
 
----
+🧑‍💻 About Me
+💻 I build scalable and clean Flutter applications
 
-## What I bring to an app
+⚡ Experienced with state management & architecture
 
-Think of an app as a little world. I build its screens, connect it to useful services, and add the details that make it feel easy to use.
+🔧 I love solving real-world problems using code
 
-| The app needs to… | I work with… |
-| --- | --- |
-| Welcome people back to their account | Firebase Authentication |
-| Send a timely update | Firebase Cloud Messaging (FCM) |
-| Understand which features are useful | Firebase Analytics |
-| Spot and fix crashes | Firebase Crashlytics |
-| Check app requests and protect services | Firebase App Check |
-| Adjust selected experiences remotely | Firebase Remote Config |
-| Fetch live information from other services | REST APIs, HTTP, Dio |
-| Build and organize Flutter projects | Flutter, Dart, Get CLI |
+📱 Focused on performance & UI/UX
 
-## How I like to build
+🛠️ Tech Stack
+🚀 Flutter & Mobile
+<p align="left">
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg" alt="flutter" width="45" height="45"/>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-original.svg" alt="dart" width="45" height="45"/>
+<img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="45" height="45"/>
+<img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="45" height="45"/>
+</p>
 
-**Start with people.** Make the purpose clear and the flow easy to follow.  
-**Connect the pieces.** Bring together the interface, APIs, and Firebase services.  
-**Polish the feeling.** Use animation and thoughtful details to make interactions feel natural.
+Flutter
 
-## My toolkit
+Dart
 
-`Flutter` · `Dart` · `Firebase` · `FCM` · `Crashlytics` · `Analytics` · `Authentication` · `App Check` · `Remote Config` · `HTTP` · `Dio` · `Get CLI` · `GetX` · `BLoC` · `Git`
+GetX
 
-## Projects
+Bloc
 
-The portfolio site includes a public project gallery and an admin-only upload form. Project name is required; description, services, and link are optional. Logo uploads are disabled until Firebase Storage is enabled.
+🌐 Backend & APIs
+REST APIs
 
-### Connect the project gallery to Firebase
+HTTP
 
-1. In the [Firebase console](https://console.firebase.google.com/), create or open a Firebase project.
-2. Open **Project settings → General → Your apps**, add a **Web app**, and copy its Firebase configuration.
-3. Replace the example values in `firebase-config.js` with the web app configuration. Set `adminEmail` to the exact email address you will use to sign in. Firebase web app configuration is public; never put an account password or service-account key in this file.
-4. In **Authentication → Sign-in method**, enable **Email/Password**. In **Users**, add your admin account and set its password.
-5. Create a **Cloud Firestore** database and enable **Storage** for the project.
-6. Publish these Firestore rules, replacing `YOUR_ADMIN_EMAIL` with the same admin email:
+Dio
 
-   ```text
-   rules_version = '2';
-   service cloud.firestore {
-     match /databases/{database}/documents {
-       match /projects/{projectId} {
-         allow read: if true;
-         allow create, update, delete: if request.auth != null
-           && request.auth.token.email == 'YOUR_ADMIN_EMAIL';
-       }
-     }
-   }
-   ```
+Firebase
 
-7. Publish these Storage rules with the same email. They make uploaded project logos publicly viewable but restrict uploads and deletes to the admin:
+🧰 Tools & Workflow
+Git & GitHub
 
-   ```text
-   rules_version = '2';
-   service firebase.storage {
-     match /b/{bucket}/o {
-       match /projects/{adminUid}/{fileName} {
-         allow read: if true;
-         allow write: if request.auth != null
-           && request.auth.token.email == 'YOUR_ADMIN_EMAIL'
-           && request.auth.uid == adminUid
-           && (request.resource == null
-             || (request.resource.size < 5 * 1024 * 1024
-               && request.resource.contentType.matches('image/.*')));
-       }
-     }
-   }
-   ```
+GetCLI
 
-8. Deploy the site with `index.html`, `projects.js`, and `firebase-config.js` in the same directory. Open the **Projects** section, sign in with your Firebase admin email and password, and publish projects. Visitors can see published projects without signing in.
+Android Studio
 
-## Let’s make something useful
+VS Code
 
-Open to collaborating on Flutter apps and real-world product ideas.
+📊 What I Do
+📱 Build cross-platform mobile apps
 
-<div align="center">
+🔗 API integration (HTTP & Dio)
 
-[GitHub](https://github.com/yadavmanish01) &nbsp; · &nbsp; [Email Manish](mailto:imyadavmanish01@gmail.com)
+🔥 Firebase integration (Auth, Firestore, etc.)
 
-</div>
+🧠 State management (GetX, Bloc)
+
+🏗️ Clean architecture & scalable code
+
+🌱 Currently Learning
+Advanced Flutter animations
+
+Performance optimization
+
+Scalable app architecture
+
+🤝 Let's Collaborate
+Open to Flutter projects
+
+Interested in real-world app development
+
+Always ready to learn & contribute
+
+📫 Connect With Me
+<p align="left">
+<a href="https://github.com/yadavmanish01"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /></a>
+<a href="mailto:imyadavmanish01@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+</p>
+
+GitHub: https://github.com/yadavmanish01
+
+Email: imyadavmanish01@gmail.com
+
+
+⚡ Fun Fact
+I can turn ☕ into Flutter apps 😄
+
+⭐️ From Manish Yadav
