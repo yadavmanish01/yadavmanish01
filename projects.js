@@ -190,6 +190,7 @@ if (
 ) {
   status.textContent = "Project gallery is not connected yet. Follow the Firebase setup steps in README.md.";
   loginToggle.disabled = true;
+  document.dispatchEvent(new CustomEvent("portfolio-auth-state", { detail: { isAdmin: false } }));
 } else {
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
@@ -240,6 +241,7 @@ if (
   onAuthStateChanged(auth, user => {
     isSignedIn = Boolean(user);
     isAdmin = Boolean(user?.email && user.email.toLowerCase() === adminEmail.toLowerCase());
+    document.dispatchEvent(new CustomEvent("portfolio-auth-state", { detail: { isAdmin } }));
     loginToggle.hidden = Boolean(user);
     logoutButton.hidden = !user;
     loginPanel.hidden = true;
